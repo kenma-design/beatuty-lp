@@ -1,0 +1,196 @@
+/* リセットスタイルと基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ナビゲーション */
+nav {
+    background-color: #FDF6F0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ヒーローセクション */
+#hero {
+    height: 600px;
+    background-image: url(images/hero.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(248, 233, 239, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #E5C0C9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d8aebd;
+}
+
+/* サービスセクション */
+#services {
+    padding: 4rem 2rem;
+    background-color: #FDF6F0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* テストモニアルセクション */
+#testimonials {
+    padding: 4rem 2rem;
+    background-color: #F8E9EF;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.author {
+    display: block;
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* アバウトセクション */
+#about {
+    padding: 4rem 2rem;
+    background-color: #FDF6F0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.salon-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ファイナルCTAセクション */
+#final-cta {
+    padding: 4rem 2rem;
+    background-color: #F8E9EF;
+    text-align: center;
+}
+
+/* フッターセクション */
+footer {
+    padding: 4rem 2rem;
+    background-color: #FDF6F0;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 見出しのスタイリング */
+section h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+    text-align: center;
+}
