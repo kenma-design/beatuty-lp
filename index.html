@@ -12,11 +12,20 @@
 <body>
     <header>
         <nav>
-            <h1>Beauty Salon</h1>
-            <ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html" class="logo">
+                <h1>Beauty Salon</h1>
+            </a>
+            <ul class="nav-links">
                 <li><a href="#services">サービス</a></li>
                 <li><a href="#testimonials">お客様の声</a></li>
-                <li><a href="#about">私たちについて</a></li>
+                <li><a href="index.html#about">私たちについて</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+                <li><a href="#contact" class="nav-cta">予約する</a></li>
             </ul>
         </nav>
     </header>
@@ -38,14 +47,17 @@
                 <div class="service-card">
                     <h3>フェイシャルケア</h3>
                     <p>肌悩みに合わせたオーダーメイド施術</p>
+                    <a href="menu.html#facial" class="detail-button">メニュー詳細を見る</a>
                 </div>
                 <div class="service-card">
                     <h3>ボディマッサージ</h3>
                     <p>アロマで癒す極上リンパドレナージュ</p>
+                    <a href="menu.html#massage" class="detail-button">メニュー詳細を見る</a>
                 </div>
                 <div class="service-card">
                     <h3>まつげエクステ</h3>
                     <p>ナチュラル～濃密まで自由自在</p>
+                    <a href="menu.html#eyelash" class="detail-button">メニュー詳細を見る</a>
                 </div>
             </div>
         </section>
@@ -80,7 +92,7 @@
         <section id="final-cta">
             <div class="cta-content">
                 <h2>自分史上最高の私へ</h2>
-                <a href="#contact" class="cta-button">LINEで予約する</a>
+                <a href="#contact" class="cta-button">予約する</a>
             </div>
         </section>
     </main>
@@ -93,5 +105,6 @@
             <p>営業時間: 10:00 - 20:00</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
