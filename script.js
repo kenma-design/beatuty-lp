@@ -29,38 +29,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize Slick Slider for all menu sections
-    $('.menu-section .menu-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true,
-        arrows: true,
-        autoplay: false,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: "unslick"
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    dots: true,
-                    arrows: true
-                }
-            },
-            {
-                breakpoint: 1300,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    dots: true,
-                    arrows: true
-                }
-            }
-        ]
-    });
+
 });
