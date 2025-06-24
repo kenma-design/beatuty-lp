@@ -24,16 +24,119 @@ nav {
     z-index: 1000;
 }
 
-nav ul {
+.logo {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.logo:hover h1 {
+    color: #E5C0C9;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FDF6F0;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.nav-links.active li {
+    width: 100%;
+    text-align: center;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    padding: 0.5rem;
+    display: block;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E5C0C9;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Ensure the CTA button doesn't get the underline */
+.nav-cta::after {
+    display: none;
+}
+
+.nav-cta {
+    background-color: #E5C0C9;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background-color: #d8aebd;
+    transform: translateY(-2px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 /* ヒーローセクション */
@@ -107,6 +210,281 @@ nav a {
     text-align: center;
 }
 
+.detail-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #E5C0C9;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.detail-button:hover {
+    background-color: #d8aebd;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-link {
+    display: block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #E5C0C9;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.service-link:hover {
+color: #d8aebd;
+}
+
+/* Menu Page Styles */
+.menu-hero {
+background-color: #F8E9EF;
+padding: 8rem 2rem 4rem;
+text-align: center;
+margin-bottom: 4rem;
+}
+
+/* FAQ Page Styles */
+.faq-hero {
+background-color: #F8E9EF;
+padding: 8rem 2rem 4rem;
+text-align: center;
+margin-bottom: 4rem;
+}
+
+.faq-content {
+max-width: 800px;
+margin: 0 auto;
+padding: 0 2rem;
+}
+
+.faq-item {
+margin-bottom: 3rem;
+padding: 1.5rem;
+background-color: #FDF6F0;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+color: #E5C0C9;
+margin-bottom: 1rem;
+font-size: 1.25rem;
+}
+
+.faq-answer {
+margin-left: 1rem;
+}
+
+.faq-answer ul {
+list-style: none;
+padding: 0;
+}
+
+.faq-answer ul li {
+margin-bottom: 0.5rem;
+padding-left: 1rem;
+position: relative;
+}
+
+.faq-answer ul li::before {
+content: '•';
+color: #E5C0C9;
+position: absolute;
+left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.faq-item {
+padding: 1rem;
+}
+    
+.faq-answer {
+margin-left: 0.5rem;
+}
+}
+
+.menu-hero h1 {
+font-size: clamp(2rem, 5vw, 3rem);
+color: #333;
+margin-bottom: 1rem;
+}
+
+.menu-hero p {
+font-size: clamp(1rem, 3vw, 1.25rem);
+color: #666;
+}
+
+/* Menu Sections */
+.menu-section {
+padding: 4rem 2rem;
+background-color: #FDF6F0;
+}
+
+/* Mobile menu items */
+.menu-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 1rem;
+}
+
+.menu-item h3 {
+    color: #E5C0C9;
+    margin-bottom: 1rem;
+}
+
+.menu-item p {
+    color: #E5C0C9;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.menu-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.menu-item ul li::before {
+    content: '•';
+    color: #E5C0C9;
+    position: absolute;
+    left: 0;
+}
+
+.menu-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 1rem;
+}
+
+/* Slick Slider Custom Styles */
+.slick-slider {
+    margin: 2rem 0;
+}
+
+.slick-dots {
+    bottom: -25px;
+}
+
+.slick-dots li button:before {
+    color: #E5C0C9;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #E5C0C9;
+    opacity: 1;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 24px;
+    color: #E5C0C9;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .menu-grid {
+        display: none;
+    }
+    
+    .menu-slider {
+        display: block;
+    }
+}
+
+.menu-item h3 {
+    color: #E5C0C9;
+    margin-bottom: 1rem;
+}
+
+.menu-item p {
+    color: #E5C0C9;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.menu-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.menu-item .detail-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #E5C0C9;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.menu-item .detail-button:hover {
+    background-color: #d8aebd;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item ul li::before {
+    content: '•';
+    color: #E5C0C9;
+    position: absolute;
+    left: 0;
+}
+
+.booking-section {
+    padding: 4rem 2rem;
+    background-color: #F8E9EF;
+    text-align: center;
+}
+
+.booking-content ul {
+    list-style: none;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.booking-content li {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
 /* テストモニアルセクション */
 #testimonials {
     padding: 4rem 2rem;
@@ -147,10 +525,22 @@ nav a {
     align-items: center;
 }
 
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .salon-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    animation: slideInLeft 1.5s ease-out;
 }
 
 /* ファイナルCTAセクション */
