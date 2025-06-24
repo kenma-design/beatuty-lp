@@ -250,6 +250,62 @@ text-align: center;
 margin-bottom: 4rem;
 }
 
+.menu-section {
+padding: 4rem 2rem;
+background-color: #FDF6F0;
+}
+
+.menu-section h2 {
+font-size: clamp(1.5rem, 4vw, 2rem);
+color: #E5C0C9;
+margin-bottom: 2rem;
+text-align: center;
+}
+
+.menu-item {
+background-color: white;
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+margin-bottom: 2rem;
+}
+
+.menu-item h3 {
+color: #E5C0C9;
+margin-bottom: 1rem;
+}
+
+.menu-item p {
+color: #E5C0C9;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.menu-item ul {
+list-style: none;
+padding: 0;
+}
+
+.menu-item ul li {
+margin-bottom: 0.5rem;
+padding-left: 1rem;
+position: relative;
+}
+
+.menu-item ul li::before {
+content: '•';
+color: #E5C0C9;
+position: absolute;
+left: 0;
+}
+
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 2rem;
+}
+
 /* FAQ Page Styles */
 .faq-hero {
 background-color: #F8E9EF;
